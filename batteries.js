@@ -81,6 +81,12 @@ const range = (x, y) => {
   return arr.map((n, i) => i + x) // i becomes the index of each element, n becomes a placeholder
 }
 
+const buildArray = x => {
+  const arr = [...Array(x)]
+  return arr
+}
+
+
 // --------------------------------- Objects --------------------------------- //
 
 const eqObjects = (object1, object2) => JSON.stringify(object1) === JSON.stringify(object2) // converts object to a string
@@ -91,6 +97,12 @@ const removeProp = (property, object) => {
 
 const setProp = (property, v, object) => {
   return ({ ...object, [property]: v }) // when adding a key in a variable it needs to be in []
+}
+
+const getRandomIntInclusive = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 module.exports = {
@@ -112,7 +124,10 @@ module.exports = {
   product,
   maximum,
   minimum,
+  range,
+  buildArray,
   eqObjects,
   removeProp,
   setProp,
+  getRandomIntInclusive,
 };
